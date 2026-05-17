@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards Study App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>Decks</h2>
+            <ul id="folder-list" class="folder-list">
+                <!-- Folders injected here -->
+            </ul>
+            <button id="btn-show-form" class="btn-secondary">Add Flashcard</button>
+        </aside>
+
+        <div class="app-container">
+            <header>
+                <h1 id="deck-title">Study Flashcards</h1>
+                <div class="stats">
+                    <span id="score-display">Score: 0</span>
+                    <span id="progress-display">Card: 1 / 0</span>
+                </div>
+            </header>
+            
+            <main>
+                <div class="flashcard-container" id="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h2 id="card-question">Question</h2>
+                        </div>
+                        <div class="flashcard-back">
+                            <h2 id="card-answer">Answer</h2>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="btn-prev">Previous</button>
+                    <button id="btn-flip">Flip</button>
+                    <button id="btn-next">Next</button>
+                </div>
+                
+                <div class="actions">
+                    <button id="btn-correct" class="success">I knew it!</button>
+                    <button id="btn-incorrect" class="danger">Needs review</button>
+                    <button id="btn-reset" class="secondary">Reset Deck</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal for new flashcard -->
+    <div id="add-card-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Create New Flashcard</h2>
+            <form id="add-card-form">
+                <div class="form-group">
+                    <label for="new-question">Question</label>
+                    <textarea id="new-question" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="new-answer">Answer</label>
+                    <textarea id="new-answer" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Save Card</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
