@@ -2,6 +2,12 @@
 
 This project demonstrates how to set up and run ESLint using the new Flat Config system (`eslint.config.mjs`) on a vanilla JavaScript application (`flashcard-app`).
 
+## Installation
+
+```bash
+npm install
+```
+
 ## Running ESLint
 
 To lint the demo project, run the following command from the root of this project:
