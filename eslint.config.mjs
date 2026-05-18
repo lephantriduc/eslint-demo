@@ -17,8 +17,8 @@ export default defineConfig([
     plugins: { local: eslintPluginLocal },
     rules: {
       "no-console": "error",
-      semi: "error",
-      eqeqeq: "error",
+      "semi": "error",
+      "eqeqeq": "error",
       "keyword-spacing": "error",
       "local/enforce-file-comment": "error",
     },
