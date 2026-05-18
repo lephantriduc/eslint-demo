@@ -11,7 +11,7 @@ export const folders = [
             {
                 id: 2,
                 question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
-                answer: "<script src='xxx.js'>"
+                answer: "&lt;script src='xxx.js'&gt;"
             }
         ]
     },
@@ -28,6 +28,11 @@ export const folders = [
                 id: 4,
                 question: "How do you create a function in JavaScript?",
                 answer: "function myFunction()"
+            },            
+            {
+                id: 5,
+                question: "What are the potential risks of using <em>innerHTML</em> without a sanitizer like DOMPurify?",
+                answer: "<u>XSS</u>"
             }
         ]
     }

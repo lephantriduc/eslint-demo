@@ -21,6 +21,7 @@ export default defineConfig([
       "eqeqeq": "error",
       "keyword-spacing": "error",
       "local/enforce-file-comment": "error",
+      "local/require-dompurify": "error",
     },
   },
 ]);

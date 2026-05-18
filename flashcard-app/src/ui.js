@@ -6,8 +6,8 @@ export function updateCardUI(card) {
         questionEl.textContent = "No cards available";
         answerEl.textContent = "Add a flashcard to get started!";
     } else {
-        questionEl.textContent = card.question;
-        answerEl.textContent = card.answer;
+        questionEl.innerHTML = card.question;
+        answerEl.innerHTML = card.answer;
     }
     
     const cardEl = document.getElementById('flashcard');

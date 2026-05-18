@@ -231,9 +231,21 @@ button:hover {
     padding: 30px;
     border-radius: 10px;
     width: 90%;
-    max-width: 400px;
+    max-width: 760px;
+    max-height: 90vh;
+    overflow-y: auto;
     position: relative;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#add-card-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+    gap: 16px 20px;
+}
+
+#add-card-form .btn-primary {
+    grid-column: 1 / -1;
 }
 
 .close {
@@ -262,18 +274,142 @@ button:hover {
     font-weight: bold;
 }
 
-.form-group textarea {
+.format-toolbar {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.format-btn {
+    width: 34px;
+    height: 30px;
+    padding: 0;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.format-btn.italic {
+    font-style: italic;
+}
+
+.format-btn.underline {
+    text-decoration: underline;
+}
+
+.format-btn.active {
+    background-color: var(--primary-dark);
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.65);
+}
+
+.rich-editor {
     width: 100%;
     height: 80px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    resize: none;
     font-family: inherit;
     box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.rich-editor:empty::before {
+    content: attr(data-placeholder);
+    color: #888;
+}
+
+.rich-editor:focus {
+    outline: 2px solid rgba(74, 111, 165, 0.25);
+    border-color: var(--primary);
+}
+
+.card-preview {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+}
+
+.card-preview h3 {
+    margin: 0 0 10px 0;
+    color: var(--primary-dark);
+    font-size: 18px;
+}
+
+.preview-flashcard {
+    width: 100%;
+    min-height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.preview-card-inner {
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+.preview-flashcard.flipped .preview-card-inner {
+    transform: rotateY(180deg);
+}
+
+.preview-card-face {
+    position: absolute;
+    width: 100%;
+    min-height: 250px;
+    padding: 16px;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    background-color: var(--card-bg);
+    box-sizing: border-box;
+}
+
+.preview-card-face span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.preview-card-face h2 {
+    margin: 0;
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+    font-size: 20px;
+}
+
+.preview-card-back {
+    transform: rotateY(180deg);
+    background-color: var(--primary);
+    color: white;
+}
+
+.preview-card-back span {
+    color: white;
 }
 
 .btn-primary {
     width: 100%;
     margin-top: 10px;
+}
+
+@media (max-width: 760px) {
+    #add-card-form {
+        grid-template-columns: 1fr;
+    }
+
+    .card-preview {
+        grid-row: auto;
+        grid-column: auto;
+    }
 }

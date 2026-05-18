@@ -60,11 +60,34 @@
             <form id="add-card-form">
                 <div class="form-group">
                     <label for="new-question">Question</label>
-                    <textarea id="new-question" required></textarea>
+                    <div class="format-toolbar" data-target="new-question">
+                        <button type="button" class="format-btn" data-command="bold" title="Bold" aria-pressed="false">B</button>
+                        <button type="button" class="format-btn italic" data-command="italic" title="Italic" aria-pressed="false">I</button>
+                        <button type="button" class="format-btn underline" data-command="underline" title="Underline" aria-pressed="false">U</button>
+                    </div>
+                    <div id="new-question" class="rich-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Type question..."></div>
                 </div>
                 <div class="form-group">
                     <label for="new-answer">Answer</label>
-                    <textarea id="new-answer" required></textarea>
+                    <div class="format-toolbar" data-target="new-answer">
+                        <button type="button" class="format-btn" data-command="bold" title="Bold" aria-pressed="false">B</button>
+                        <button type="button" class="format-btn italic" data-command="italic" title="Italic" aria-pressed="false">I</button>
+                        <button type="button" class="format-btn underline" data-command="underline" title="Underline" aria-pressed="false">U</button>
+                    </div>
+                    <div id="new-answer" class="rich-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Type answer..."></div>
+                </div>
+                <div class="card-preview">
+                    <h3>Card Preview</h3>
+                    <div id="preview-flashcard" class="preview-flashcard" role="button" tabindex="0" title="Click to flip preview">
+                        <div class="preview-card-inner">
+                            <div class="preview-card-face preview-card-front">
+                                <h2 id="preview-question">Question</h2>
+                            </div>
+                            <div class="preview-card-face preview-card-back">
+                                <h2 id="preview-answer">Answer</h2>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <button type="submit" class="btn-primary">Save Card</button>
             </form>
