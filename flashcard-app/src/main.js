@@ -96,13 +96,13 @@ function attachEventListeners() {
 }
 
 function nextCard() {
-    if (deck.length === 0) return;
+    if(deck.length === 0) return;
     
-    if (currentCardIndex < deck.length - 1) {
+    if(currentCardIndex < deck.length - 1) {
         currentCardIndex++;
         updateCardUI(deck[currentCardIndex]);
         updateProgressUI(currentCardIndex, deck.length, score);
-    } else {
+    }else{
         console.log("End of deck reached!");
         
         let finalScore = calculateScore(score, deck.length);
@@ -113,9 +113,9 @@ function nextCard() {
 }
 
 function prevCard() {
-    if (deck.length === 0) return;
+    if (deck.length===0) return;
     
-    if (currentCardIndex > 0) {
+    if (currentCardIndex>0) {
         currentCardIndex--;
         updateCardUI(deck[currentCardIndex]);
         updateProgressUI(currentCardIndex, deck.length, score);

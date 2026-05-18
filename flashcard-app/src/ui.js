@@ -2,7 +2,7 @@ export function updateCardUI(card) {
     const questionEl = document.getElementById('card-question');
     const answerEl = document.getElementById('card-answer');
     
-    if (!card) {
+    if(!card) {
         questionEl.textContent = "No cards available";
         answerEl.textContent = "Add a flashcard to get started!";
     } else {
@@ -52,7 +52,7 @@ export function toggleModal(show) {
     const modal = document.getElementById('add-card-modal');
     if (show) {
         modal.classList.remove('hidden');
-    } else {
+    } else{
         modal.classList.add('hidden');
     }
 }
