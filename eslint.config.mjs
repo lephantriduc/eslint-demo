@@ -17,7 +17,7 @@ export default defineConfig([
       "no-console": "error",
       "semi": "error",
       "eqeqeq": "error",
-      "no-unused-vars": "error"
+      "keyword-spacing": "error",
     },
   }
 ]);
