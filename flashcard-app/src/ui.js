@@ -25,8 +25,8 @@ export function updateProgressUI(currentIndex, total, score, folderName) {
         document.getElementById('deck-title').textContent = folderName;
     }
 
-    function triggerUndef() {
-        someGlobalVar = true;
+    function makeProgress() {
+        progress = true;
     }
 }
 

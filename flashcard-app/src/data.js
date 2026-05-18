@@ -33,6 +33,6 @@ export const folders = [
     }
 ];
 
-const unusedData = [1, 2, 3]
+const testData = [1, 2, 3]
 
 export const config   = { theme: 'dark' }
