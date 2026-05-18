@@ -1,7 +1,7 @@
 import js from "@eslint/js";
 import globals from "globals";
 import { defineConfig } from "eslint/config";
-import eslintPluginLocal from "./custom-rules/eslint-plugin.js";
+import eslintPluginLocal from "./custom-rules/eslint-plugin-local.js";
 
 export default defineConfig([
   js.configs.recommended,
