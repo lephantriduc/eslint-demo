@@ -140,8 +140,8 @@ function attachEventListeners() {
         e.preventDefault();
         const questionEl = document.getElementById('new-question');
         const answerEl = document.getElementById('new-answer');
-        const question = questionEl.innerHTML;
-        const answer = answerEl.innerHTML;
+        const question = questionEl.value;
+        const answer = answerEl.value;
 
         if (!questionEl.textContent.trim() || !answerEl.textContent.trim()) {
             alert('Please enter both question and answer.');
@@ -158,8 +158,6 @@ function attachEventListeners() {
         folder.cards.push(newCard);
         
         document.getElementById('add-card-form').reset();
-        questionEl.innerHTML = '';
-        answerEl.innerHTML = '';
         delete editorRanges['new-question'];
         delete editorRanges['new-answer'];
         document.getElementById('preview-flashcard').classList.remove('flipped');
