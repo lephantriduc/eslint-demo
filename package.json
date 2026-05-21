@@ -1,9 +1,13 @@
-  {
+{
   "name": "eslint-demo",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "flashcard-app/**/*.{js,mjs,cjs}": "eslint"
   },
   "author": "",
   "license": "ISC",
@@ -11,6 +15,8 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.3.0",
-    "globals": "^17.6.0"
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.5"
   }
 }
